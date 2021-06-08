@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="shortcut icon" href="#">
+    <script src="https://code.jquery.com/jquery-3.5.0.js" defer></script>
+    <style type="text/css">
+        #warning-message { display: none; }
+        @media only screen and (orientation:portrait){
+            #wrapper { display:none; }
+            #warning-message { display:block; }
+        }
+        @media only screen and (orientation:landscape){
+            #warning-message { display:none; }
+        }
+    </style>
+    
+
+    
+</head>
+<body class="light">
+    <div id="wrapper"></div>
+    
+    <div class="piano">
+        <!--<div data-note="C1" class="key white light"></div>
+        <div data-note="Cb1" class=" key black light"></div>
+        <div data-note="D1" class="key white light"></div>
+        <div data-note="Db1" class="key black light"></div>
+        <div data-note="E1" class="key white light"></div>
+        <div data-note="F1" class="key white light"></div>
+        <div data-note="Fb1" class="key black light"></div>
+        <div data-note="G1" class="key white light"></div>
+        <div data-note="Gb1" class="key black light"></div>
+        <div data-note="A1" class="key white light"></div>
+        <div data-note="Ab1" class="key black light"></div>
+        <div data-note="B1" class="key white light"></div>
+        
+        <div data-note="C2" class="key white light"></div>
+        <div data-note="Cb2" class="key black light"></div>
+        <div data-note="D2" class="key white light"></div>
+        <div data-note="Db2" class="key black light"></div>
+        <div data-note="E2" class="key white light"></div>
+        <div data-note="F2" class="key white light"></div>
+        <div data-note="Fb2" class="key black light"></div>
+        <div data-note="G2" class="key white light"></div>
+        <div data-note="Gb2" class="key black light"></div>
+        <div data-note="A2" class="key white light"></div>
+        <div data-note="Ab2" class="key black light"></div>
+        <div data-note="B2" class="key white light"></div>-->
+
+        <div data-note="C3" class="key white light"></div>
+        <div data-note="Cb3" class="key black light"></div>
+        <div data-note="D3" class="key white light"></div>
+        <div data-note="Db3" class="key black light"></div>
+        <div data-note="E3" class="key white light"></div>
+        <div data-note="F3" class="key white light"></div>
+        <div data-note="Fb3" class="key black light"></div>
+        <div data-note="G3" class="key white light"></div>
+        <div data-note="Gb3" class="key black light"></div>
+        <div data-note="A3" class="key white light"></div>
+        <div data-note="Ab3" class="key black light"></div>
+        <div data-note="B3" class="key white light"></div>
+
+        <div data-note="C4" class="key white light"></div>
+        <div data-note="Cb4" class="key black light"></div>
+        <div data-note="D4" class="key white light"></div>
+        <div data-note="Db4" class="key black light"></div>
+        <div data-note="E4" class="key white light"></div>
+        <div data-note="F4" class="key white light"></div>
+        <div data-note="Fb4" class="key black light"></div>
+        <div data-note="G4" class="key white light"></div>
+        <div data-note="Gb4" class="key black light"></div>
+        <div data-note="A4" class="key white light"></div>
+        <div data-note="Ab4" class="key black light"></div>
+        <div data-note="B4" class="key white light"></div>
+
+        <div data-note="C5" class="key white light"></div>
+        <div data-note="Cb5" class="key black light"></div>
+        <div data-note="D5" class="key white light"></div>
+        <div data-note="Db5" class="key black light"></div>
+        <div data-note="E5" class="key white light"></div>
+        <div data-note="F5" class="key white light"></div>
+        <div data-note="Fb5" class="key black light"></div>
+        <div data-note="G5" class="key white light"></div>
+        <div data-note="Gb5" class="key black light"></div>
+        <div data-note="A5" class="key white light"></div>
+        <div data-note="Ab5" class="key black light"></div>
+        <div data-note="B5" class="key white light"></div>
+        
+        <div data-note="C6" class="key white light"></div>
+    </div>
+   
+        <button id="theme" class="light" onclick="ChangeTheme()">
+     
+        </button>
+    </div>
+
+    <audio id="C3" src="Notes/C3.mp3"></audio>
+    <audio id="Cb3" src="Notes/Cb3.mp3"></audio>
+    <audio id="D3" src="Notes/D3.mp3"></audio>
+    <audio id="Db3" src="Notes/Db3.mp3"></audio>
+    <audio id="E3" src="Notes/E3.mp3"></audio>
+    <audio id="F3" src="Notes/F3.mp3"></audio>
+    <audio id="Fb3" src="Notes/Fb3.mp3"></audio>
+    <audio id="G3" src="Notes/G3.mp3"></audio>
+    <audio id="Gb3" src="Notes/Gb3.mp3"></audio>
+    <audio id="A3" src="Notes/A3.mp3"></audio>
+    <audio id="Ab3" src="Notes/Ab3.mp3"></audio>
+    <audio id="B3" src="Notes/B3.mp3"></audio>
+
+    <audio id="C4" src="Notes/C4.mp3"></audio>
+    <audio id="Cb4" src="Notes/Cb4.mp3"></audio>
+    <audio id="D4" src="Notes/D4.mp3"></audio>
+    <audio id="Db4" src="Notes/Db4.mp3"></audio>
+    <audio id="E4" src="Notes/E4.mp3"></audio>
+    <audio id="F4" src="Notes/F4.mp3"></audio>
+    <audio id="Fb4" src="Notes/Fb4.mp3"></audio>
+    <audio id="G4" src="Notes/G4.mp3"></audio>
+    <audio id="Gb4" src="Notes/Gb4.mp3"></audio>
+    <audio id="A4" src="Notes/A4.mp3"></audio>
+    <audio id="Ab4" src="Notes/Ab4.mp3"></audio>
+    <audio id="B4" src="Notes/B4.mp3"></audio>
+
+    <audio id="C5" src="Notes/C5.mp3"></audio>
+    <audio id="Cb5" src="Notes/Cb5.mp3"></audio>
+    <audio id="D5" src="Notes/D5.mp3"></audio>
+    <audio id="Db5" src="Notes/Db5.mp3"></audio>
+    <audio id="E5" src="Notes/E5.mp3"></audio>
+    <audio id="F5" src="Notes/F5.mp3"></audio>
+    <audio id="Fb5" src="Notes/Fb5.mp3"></audio>
+    <audio id="G5" src="Notes/G5.mp3"></audio>
+    <audio id="Gb5" src="Notes/Gb5.mp3"></audio>
+    <audio id="A5" src="Notes/A5.mp3"></audio>
+    <audio id="Ab5" src="Notes/Ab5.mp3"></audio>
+    <audio id="B5" src="Notes/B5.mp3"></audio>
+
+    <audio id="C6" src="Notes/C6.mp3"></audio>
+
+    <div id="warning-message">
+        this website is only viewable in landscape mode
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+
+</body>
+</html>
